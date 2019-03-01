@@ -49,6 +49,7 @@ A registered user may update or reset a forgotten password from the log in scree
 Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
 ## Dependencies
  ### All Environments
+
  - [Rails](https://guides.rubyonrails.org/)
  - [Postgresql](https://www.postgresql.org/)
  - [Puma](https://github.com/puma/puma)
@@ -56,12 +57,14 @@ Run `rspec` to run the full test suite, or `rails s` to load up the application 
  - [Faraday](https://github.com/lostisland/faraday)
  - [Figaro](https://github.com/laserlemon/figaro)
  - [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+
  ### Development
  - [Rspec for Rails](https://github.com/rspec/rspec-rails)
  - [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
  - [Pry for Rails](https://github.com/rweng/pry-rails)
  - [Awesome Print](https://github.com/awesome-print/awesome_print)
  - [Fuubar](https://github.com/thekompanee/fuubar)
+ 
  ### Test
  - [VCR](https://github.com/vcr/vcr)
  - [Webmock](https://github.com/bblimke/webmock)
