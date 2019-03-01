@@ -22,30 +22,13 @@
 * [Contributors/Developers](#contributorsdevelopers)
 
 ## Description/Purpose
-This application was developed for the final project assignment for Turing School's Backend Engineering Program.  More information about this assignment can be found [here](http://backend.turing.io/module4/projects/take_home_challenge/take_home_challenge_spec).
 
-The specfic assignment required the student to build a fullstack application according to the following specification:
 ```
-Create a tool that people who are considering moving can get some data points on for a prospective city:
-
-- What is the cost of living?
-- What is the population? 
-- At least 2 more considerations, from the following or based on your own ideas:
-    - What is the walkability score? Bike-ability score?
-    - Proximity to airport
-    - Cost of vehicle registration
-    - Cost of gas
-
-- Users should be able to "favorite" and "eliminate" cities, and see their master list of favorites. If they re-search for an eliminated city, they should still be able to access the data but should receive a friendly reminder that they eliminated it. Consider how you will make sure all of the numbers are put into perspective for your user, so that they all have meaning. 
-This API should help you get started - https://public.opendatasoft.com/explore/dataset/1000-largest-us-cities-by-population-with-geographic-coordinates/api
 ```
-
 
 ## System Requirements
  - Ruby >= 2.5.1
  - Rails >= 5.2.2
-
-
 ## Initial Setup
 1. Clone or fork this project to your local machine.
 2. Run `bundle` in the project folder.
@@ -53,11 +36,9 @@ This API should help you get started - https://public.opendatasoft.com/explore/d
 4. Run `rails db:{create,migrate,seed}` in the project folder.
 5. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
 6. Or, use go [here]() to see the application live
-
 ## Running Tests
-Run `rspec` to run the full test suite, or `rails server` to load up the application.
+Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
 ## Dependencies
-
  ### All Environments
  - [Rails](https://guides.rubyonrails.org/)
  - [Postgresql](https://www.postgresql.org/)
@@ -80,7 +61,6 @@ Run `rspec` to run the full test suite, or `rails server` to load up the applica
  - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
  - [Simplecov](https://github.com/colszowka/simplecov)
   
-
 # How to Contribute
 GitWired is an open source project. We invite your participation through issues and pull requests! 
 
@@ -90,7 +70,6 @@ Issues needing additional support:
 - Desperately needs styling love!
 
 ## Screenshots
-
 ### Home Page
 
 <img src="./screenshots/home_view.png">
@@ -101,4 +80,5 @@ Issues needing additional support:
 <img src="./screenshots/user_dashboard.png">
 
 ## Known Issues
-There are no known issues at this time.
+
+## Contributors/Developers
