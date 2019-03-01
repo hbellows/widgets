@@ -39,9 +39,12 @@ A registered user may update or reset a forgotten password from the log in scree
 1. Clone or fork this project to your local machine.
 2. Run `bundle` in the project folder.
 3. Run `figaro install` in the project folder.
-4. Run `rails db:{create,migrate,seed}` in the project folder.
-5. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
-6. Or, use go [here]() to see the application live
+4. Add the following API keys to config/application.yml with the variable names exactly as shown:
+    - `CLIENT_ID`
+    - `CLIENT_SECRET`
+5. Run `rails db:{create,migrate,seed}` in the project folder.
+6. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
+7. Or, use go [here]() to see the application live
 ## Running Tests
 Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
 ## Dependencies
