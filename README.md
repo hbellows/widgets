@@ -40,8 +40,8 @@ A registered user may update or reset a forgotten password from the log in scree
 2. Run `bundle` in the project folder.
 3. Run `figaro install` in the project folder.
 4. Add the following API keys to config/application.yml with the variable names exactly as shown:
-    - `CLIENT_ID`
-    - `CLIENT_SECRET`
+    - `API_CLIENT_ID`
+    - `API_CLIENT_SECRET`
 5. Run `rails db:{create,migrate,seed}` in the project folder.
 6. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
 7. Or, use go [here]() to see the application live
@@ -74,7 +74,7 @@ Run `rspec` to run the full test suite, or `rails s` to load up the application 
  - [Simplecov](https://github.com/colszowka/simplecov)
   
 # How to Contribute
-GitWired is an open source project. We invite your participation through issues and pull requests! 
+Widgets is an open source project. We invite your participation through issues and pull requests! 
 
 When adding or changing a service please add tests.
 
