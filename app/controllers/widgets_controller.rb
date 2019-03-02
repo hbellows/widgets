@@ -4,4 +4,9 @@ class WidgetsController < ApplicationController
     @widgets = WidgetsFacade.new
   end
 
+  def show
+    binding.pry
+    @user_widgets = UserWidgetsFacade.new(params[:id])
+  end
+
 end
