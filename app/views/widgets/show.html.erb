@@ -1,0 +1,16 @@
+<div>
+  <p><%= @user_widgets.created_by %>'s Widgets</p>
+</div>
+
+<div class='user-avatar'>
+  <img src="#{@user_widgets.avatar}" alt="user avatar"> 
+</div>
+
+<div>
+  <% @user_widgets.visible.each do |widget|%>
+    <ul class='widget'>
+      <li> <%= widget.name %></li>
+      <li> <%= widget.description %></li>
+    </ul>
+  <% end%>
+</div>
