@@ -28,3 +28,9 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ingnore Spec Fixtures
+/spec/fixtures/
+
+# Ignore simplecov coverage report
+/coverage
