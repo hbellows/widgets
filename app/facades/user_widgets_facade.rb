@@ -22,12 +22,12 @@ class UserWidgetsFacade
 
   private
 
-  def widget_client
-    @widget_client ||= WidgetClient.new
+  def showoff_client
+    @showoff_client ||= ShowoffClient.new
   end
 
   def user_widgets_data
-    widget_client.find_user_widgets(user_id)[:data][:widgets]
+    showoff_client.find_user_widgets(user_id)[:data][:widgets]
   end
 
 end

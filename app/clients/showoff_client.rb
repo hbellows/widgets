@@ -1,4 +1,4 @@
-class WidgetClient
+class ShowoffClient
 
   def find_widgets
     get_json('/api/v1/widgets/visible')
