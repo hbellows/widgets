@@ -36,6 +36,8 @@ group :test do
   gem 'factory_bot_rails'
   gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 
