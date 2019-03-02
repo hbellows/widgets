@@ -22,8 +22,7 @@ jobs:
         name: Restore bundle cache
         key: widgets-{{ checksum "Gemfile.lock" }}
 
-      # Bundle install dependencies
-            # Bundler 2.0 Issues with CircleCI
+      # Bundler 2.0 Issues with CircleCI
       - run:
           name: Configure Bundler
           command: |
@@ -31,6 +30,7 @@ jobs:
             source $BASH_ENV
             gem install bundler
             
+      # Bundle install dependencies
       - run: bundle install --path vendor/bundle
 
       #Cache Dependencies
