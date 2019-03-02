@@ -1,0 +1,10 @@
+<h1>Widgets</h1>
+
+<div class='visible-widgets'>
+  <% @widgets.visible.each do |widget| %>
+    <ul class='widget'>
+      <%= widget.name %>
+      <%= widget.created_by %>
+    </ul>
+  <% end %>
+</div>
