@@ -1,8 +1,8 @@
 [![ruby](https://img.shields.io/badge/ruby-v2.5.1-red.svg)](https://www.ruby-lang.org/en/)
 [![rails](https://img.shields.io/badge/rails-v5.2.2-orange.svg)](https://rubyonrails.org/)
-[![CircleCI](https://circleci.com/gh/hbellows/smooth_move.svg?style=svg)](https://circleci.com/gh/hbellows/smooth_move)
-[![Maintainability](https://api.codeclimate.com/v1/badges/62d8a795fc71cc751823/maintainability)](https://codeclimate.com/github/hbellows/smooth_move/maintainability)
-[![codecov.io](https://codecov.io/gh/hbellows/smooth_move/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/smooth_move)
+[![CircleCI](https://circleci.com/gh/hbellows/widgets.svg?style=svg)](https://circleci.com/gh/hbellows/widgets)
+[![Maintainability](https://api.codeclimate.com/v1/badges/62d8a795fc71cc751823/maintainability)](https://codeclimate.com/github/hbellows/widgets/maintainability)
+[![codecov.io](https://codecov.io/gh/hbellows/widgets/branch/master/graph/badge.svg)](https://codecov.io/gh/hbellows/widgets)
 
 # READ ME
 
