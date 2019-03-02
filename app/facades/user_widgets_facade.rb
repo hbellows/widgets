@@ -7,7 +7,7 @@ class UserWidgetsFacade
   end
 
   def created_by
-    user_widgets_data[:data][:widgets][0][:user][:name]
+    user_widgets_data[0][:user][:name]
   end
 
   def avatar
@@ -27,7 +27,7 @@ class UserWidgetsFacade
   end
 
   def user_widgets_data
-    widget_client.find_user_widgets(user_id)
+    widget_client.find_user_widgets(user_id)[:data][:widgets]
   end
 
 end
