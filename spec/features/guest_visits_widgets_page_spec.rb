@@ -20,7 +20,7 @@ describe 'Widgets Page' do
 
   context 'A guest clicks on the creator name and' do
    it 'displays all visible widgets created by a specific user' do
-      # VCR.use_cassette('Widgets by User Page') do
+      VCR.use_cassette('Widgets by User Page') do
         visit '/widgets'
 
         within(first('.widget')) do
@@ -37,7 +37,7 @@ describe 'Widgets Page' do
           expect(page).to have_content('A Visible Widget')
           expect(page).to have_content('Widget 1')
         end
-      # end
+      end
     end
   end
 
