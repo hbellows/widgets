@@ -9,8 +9,9 @@ describe 'Landing Page' do
         expect(page).to have_content('Widgets')
         expect(page).to have_css('.widget', count: 20)
         within(first('.widget')) do
-          expect(page).to have_content('Widget Name')
-          expect(page).to have_link('User Name')
+          expect(page).to have_content('A Visible Widget')
+          expect(page).to have_content('Widget 1')
+          expect(page).to have_link('tyler Thunderbird')
         end
       end
     end

@@ -4,7 +4,4 @@ class WidgetsController < ApplicationController
     @widgets = WidgetsFacade.new
   end
 
-  private
-
-  
 end

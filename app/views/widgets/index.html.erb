@@ -4,7 +4,8 @@
   <% @widgets.visible.each do |widget| %>
     <ul class='widget'>
       <%= widget.name %>
-      <%= widget.created_by %>
+      <%= widget.description %>
+      <%= link_to widget.created_by %>
     </ul>
   <% end %>
 </div>
