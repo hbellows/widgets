@@ -8,11 +8,11 @@ class WidgetsFacade
 
   private
 
-  def widget_client
-    @widget_client ||= WidgetClient.new
+  def showoff_client
+    @showoff_client ||= ShowoffClient.new
   end
 
   def widget_data
-    widget_client.find_widgets[:data][:widgets]
+    showoff_client.find_widgets[:data][:widgets]
   end
 end
