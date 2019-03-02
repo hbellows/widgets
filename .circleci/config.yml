@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/smooth_move
+    working_directory: ~/widgets
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
         environment:
@@ -20,7 +20,7 @@ jobs:
       #Restore Cached Dependencies
       - type: cache-restore
         name: Restore bundle cache
-        key: showoff_tech_challenge-{{ checksum "Gemfile.lock" }}
+        key: widgets-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
@@ -28,7 +28,7 @@ jobs:
       #Cache Dependencies
       - type: cache-save
         name: Store bundle cache
-        key: showoff_tech_challenge-{{ checksum "Gemfile.lock" }}
+        key: widgets-{{ checksum "Gemfile.lock" }}
         paths:
           - vendor/bundle
 
