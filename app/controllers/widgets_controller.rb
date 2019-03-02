@@ -1,10 +1,10 @@
 class WidgetsController < ApplicationController
 
   def index
-    @widgets = WidgetFinder.new
+    @widgets = WidgetsFacade.new
   end
 
   private
-  
+
   
 end
