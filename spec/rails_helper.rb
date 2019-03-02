@@ -8,15 +8,18 @@ require 'simplecov'
 require 'codecov'
 
 SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
+if ENV['CI'] == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
-  config.filter_sensitive_data('<YOUR GOOGLE API KEY HERE>') { ENV['XXX_API_KEY'] }
-  config.filter_sensitive_data('<YOUR DARK SKY API KEY HERE>') { ENV['XXX_API_KEY'] }
-  config.filter_sensitive_data('<YOUR GIPHY API KEY HERE>') { ENV['XXX_API_KEY'] }
+  config.filter_sensitive_data('<API CLIENT ID>') { ENV['XXX_API_KEY'] }
+  config.filter_sensitive_data('<API CLIENT SECRET>') { ENV['XXX_API_KEY'] }
 end
 
 begin
