@@ -3,11 +3,11 @@
 </div>
 
 <div class='visible-widgets'>
-  <% @find_widgets.visible.each do |widget| %>
-    <ul class='widget'>
-      <%= widget.name %> -
-      <%= widget.description %> - 
-      <%= link_to widget.created_by, widget_path(id: widget.user_id) %>
-    </ul>
+  <div class='list-group'>
+    <% @find_widgets.visible.each do |widget| %>
+      <ul id='widget' class="list-group list-group-flush">
+        <li class="list-group-item"><h3><%= link_to widget.created_by, widget_path(id: widget.user_id) %></h3>
+        <h5><%= widget.name %></h5><%= widget.description %></li>
+      </ul>
   <% end %>
 </div>
