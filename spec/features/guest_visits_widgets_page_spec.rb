@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Widgets Page' do
-
   context 'A guest visits the widgets page and' do
     it 'displays all visible widgets and the name of the widget\'s creator' do
       VCR.use_cassette('Widgets Index Page') do
@@ -40,6 +39,4 @@ describe 'Widgets Page' do
       end
     end
   end
-
-
 end
