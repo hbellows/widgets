@@ -23,7 +23,7 @@ describe 'Widget Search' do
     end
 
     it 'displays a message if no matching widgets can be founde' do
-      VCR.use_cassette('Widgets Nil Search') do
+      # VCR.use_cassette('Widgets Nil Search') do
         visit '/widgets'
 
         fill_in :q, with: :dog
@@ -32,7 +32,7 @@ describe 'Widget Search' do
         expect(current_path).to eq('/search')
 
         expect(page).to have_content('No widgets matching "dog"')
-      end
+      # end
     end
   end
 
