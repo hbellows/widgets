@@ -34,3 +34,6 @@
 
 # Ignore simplecov coverage report
 /coverage
+
+# Ignore personal notes and to do lists
+/notes.rb

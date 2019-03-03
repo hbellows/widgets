@@ -3,7 +3,7 @@
 <div class='visible-widgets'>
   <div class="list-group">
     <% @widgets.visible.each do |widget| %>
-      <ul class="list-group list-group-flush">
+      <ul id='widget' class="list-group list-group-flush">
         <li class="list-group-item"><h3><%= link_to widget.created_by, widget_path(id: widget.user_id) %></h3>
         <h5><%= widget.name %></h5><%= widget.description %></li>
       </ul>

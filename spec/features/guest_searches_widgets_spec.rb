@@ -7,11 +7,11 @@ describe 'Widget Search' do
         visit '/widgets'
 
         fill_in :q, with: :widget
-        click_on 'Submit'
+        click_on 'Search'
 
         expect(current_path).to eq('/search')
 
-        expect(page).to have_content('6 widgets found')
+        expect(page).to have_content('7 widgets found')
         expect(page).to have_css('.widget')
         within(first('.widget')) do
           expect(page).to have_content('A Visible Widget')
@@ -26,7 +26,7 @@ describe 'Widget Search' do
         visit '/widgets'
 
         fill_in :q, with: :dog
-        click_on 'Submit'
+        click_on 'Search'
 
         expect(current_path).to eq('/search')
 

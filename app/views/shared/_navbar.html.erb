@@ -10,11 +10,7 @@
         <li class="nav-item active">
           <%= link_to 'Home', root_path, class: 'nav-link' %>
         </li>
-        <% if current_user%>
-        <li class="nav-item active">
-          <%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %>
-        </li>
-        <% end %>
+        
       </ul>
         <%= form_tag :search, method: :get, class: "search-box form-inline" do %>
           <div class="form-group search-field">
@@ -22,13 +18,7 @@
             <%= submit_tag 'Search', class: 'btn btn-outline-primary my-2 my-sm-0' %>
           </div>
         <% end %>
-      <div class='ml-5'>
-        <% if current_user %>
-          <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-primary' %>
-        <% else %>
-          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+
     </div>
   </nav>
 <%# end %>
