@@ -1,5 +1,14 @@
 <h1>Widgets</h1>
 
+<section class="inner-nav">
+  <%= form_tag '/search', method: :get, class: "widget-search" do %>
+    <%= text_field_tag :q, "Keyword" %>
+      <section>
+        <%= submit_tag "Submit", class: "btn btn-outline" %>
+      </section>
+    <% end %>
+</section>
+
 <div class='visible-widgets'>
   <% @widgets.visible.each do |widget| %>
     <ul class='widget'>
