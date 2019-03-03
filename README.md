@@ -15,8 +15,9 @@
 * [Running Tests](#running-tests)
 * [Dependencies](#dependencies)
 * [Screenshots](#screenshots)
-    * [Home Page](#home-page)
-    * [User Dashboard](#user-dashboard)
+    * [Widgets](#widgets)
+    * [User Widgets](#user-widgets)
+    * [Widget Search](#widget-search)
 * [How To Contribute](#how-to-contribute)
 * [Contributors/Developers](#contributorsdevelopers)
 
@@ -30,6 +31,8 @@ A logged in user can view their own dashboard.  A user's dashboard will have a l
 
 A registered user may update or reset a forgotten password from the log in screen.
 
+Track the progress of this application [here](https://github.com/hbellows/widgets/projects/1).
+
 ## System Requirements
  - Ruby >= 2.5.1
  - Rails >= 5.2.2
@@ -42,12 +45,11 @@ A registered user may update or reset a forgotten password from the log in scree
     - `API_CLIENT_SECRET`
 5. Run `rails db:{create,migrate,seed}` in the project folder.
 6. To use the application locally, run `rails s` and navigate to `http:localhost:3000`
-7. Or, use go [here]() to see the application live
+7. Or, use go [here](https://widgets-app.herokuapp.com/) to see the application live
 ## Running Tests
 Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
 ## Dependencies
  ### All Environments
-
  - [Rails](https://guides.rubyonrails.org/)
  - [Postgresql](https://www.postgresql.org/)
  - [Puma](https://github.com/puma/puma)
@@ -80,12 +82,16 @@ Issues needing additional support:
 - Desperately needs styling love!
 
 ## Screenshots
-### Home Page
+### Widgets
 
 <img src="./screenshots/home_view.png">
 
 
-### User Dashboard
+### User Widgets
+
+<img src="./screenshots/user_dashboard.png">
+
+### Widget Search
 
 <img src="./screenshots/user_dashboard.png">
 
