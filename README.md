@@ -22,7 +22,6 @@
 
 ## Description/Purpose
 
-```
 This is a small rails application that allows users to view a collection of widgets.  An unregistered or logged out user can see a page listing all of the widgets in the collection, inlcuding a link to the user who created it.  If an unregistered/logged out user clicks on the widget creator's name, they will be taken a page that show's that user's detail, along with a listing of all the widgets that user created.
 
 An unregistered user may also register with the web app in order to login to an account.
@@ -30,7 +29,6 @@ An unregistered user may also register with the web app in order to login to an 
 A logged in user can view their own dashboard.  A user's dashboard will have a listing of their widgets.  A logged in user can create new widgets, delete existing widgets, see more details about a specific widget, and edit a widget.  
 
 A registered user may update or reset a forgotten password from the log in screen.
-```
 
 ## System Requirements
  - Ruby >= 2.5.1
