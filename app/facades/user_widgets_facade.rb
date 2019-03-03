@@ -11,7 +11,7 @@ class UserWidgetsFacade
   end
 
   def avatar
-    user_widgets_data[:data][:widgets][0][:user][:images][:small_url]
+    user_widgets_data[0][:user][:images][:small_url]
   end
 
   def visible
@@ -29,5 +29,4 @@ class UserWidgetsFacade
   def user_widgets_data
     showoff_client.find_user_widgets(user_id)[:data][:widgets]
   end
-
 end
