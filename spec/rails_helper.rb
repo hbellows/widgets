@@ -18,8 +18,8 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.allow_http_connections_when_no_cassette = true
-  config.filter_sensitive_data('<API CLIENT ID>') { ENV['XXX_API_KEY'] }
-  config.filter_sensitive_data('<API CLIENT SECRET>') { ENV['XXX_API_KEY'] }
+  config.filter_sensitive_data('<API CLIENT ID>') { ENV['API_CLIENT_ID'] }
+  config.filter_sensitive_data('<API CLIENT SECRET>') { ENV['API_CLIENT_SECRET'] }
 end
 
 begin
