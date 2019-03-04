@@ -6,7 +6,7 @@ context 'Guest Registration' do
       visit '/widgets'
       click_on 'Sign Up'
 
-      expect(current_path).to eq(new_users_path)
+      expect(current_path).to eq(new_user_path)
     end
   end
 end

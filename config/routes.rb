@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#index'
   resources :widgets, only: %i[index show]
-  resources :users, only: %i[new]
+  resources :users, only: %i[new create]
 end
