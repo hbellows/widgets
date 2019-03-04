@@ -43,7 +43,7 @@ context 'Guest Registration' do
       click_on 'Create Account'
 
       expect(current_path).to eq(users_path)
-
+      expect(page).to have_content("Last name can't be blank")
       expect(page).to have_content('Create A Widgets Account')
     end
   end
