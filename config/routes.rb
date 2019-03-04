@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/search', to: 'search#index'
+  get '/dashboard', to: 'users#show'
   resources :widgets, only: %i[index show]
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create show]
 end
