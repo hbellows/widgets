@@ -15,6 +15,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
