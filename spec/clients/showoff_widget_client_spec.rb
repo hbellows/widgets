@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-describe ShowoffClient do
-  subject { ShowoffClient.new }
+describe ShowoffWidgetClient do
+  subject { ShowoffWidgetClient.new }
   
   it 'exists' do
-    expect(subject).to be_a(ShowoffClient)
+    expect(subject).to be_a(ShowoffWidgetClient)
   end
 
   context 'Instance Methods' do
     describe '#find_widgets' do
-      VCR.use_cassette('find_widgets') do
-        it 'returns visible widgets' do
+      it 'returns visible widgets' do
+        VCR.use_cassette('find_widgets') do
           results = subject.find_widgets
 
           expect(results).to be_a(Hash)
@@ -37,9 +37,9 @@ describe ShowoffClient do
     end
 
     describe '#find_user_widgets' do
-      VCR.use_cassette('find_user_widgets') do
-        it 'returns all widgets created by a specific user' do
-          results = subject.find_user_widgets('1')
+      it 'returns all widgets created by a specific user' do
+        VCR.use_cassette('find_widgets_by_user') do
+          results = subject.find_widgets_by_user('1')
 
           expect(results).to be_a(Hash)
           expect(results).to have_key(:message)
@@ -67,8 +67,8 @@ describe ShowoffClient do
     end
 
     describe '#search_widgets' do
-      VCR.use_cassette('search_widgets') do
-        it 'returns all widgets matching a keyword search' do
+      it 'returns all widgets matching a keyword search' do
+        VCR.use_cassette('search_widgets') do
           results = subject.search_widgets('widget')
 
           expect(results).to be_a(Hash)
@@ -95,6 +95,5 @@ describe ShowoffClient do
         end
       end
     end
-
   end
 end
