@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 describe ShowoffUserClient do
-  user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
-    password: 'hamburger1', password_confirmation: 'hamburger1',
-    token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
-    refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
-    ) 
+  # user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
+  #   password: 'hamburger1', password_confirmation: 'hamburger1',
+  #   token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
+  #   refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
+  #   ) 
 
-  subject { ShowoffUserClient.new(user.token) }
+  user_token = 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0'
+
+  subject { ShowoffUserClient.new(user_token) }
   
   it 'exists' do
     expect(subject).to be_a(ShowoffUserClient)
@@ -18,7 +20,7 @@ describe ShowoffUserClient do
       it 'returns user\'s widgets' do
         VCR.use_cassette('find_my_widgets') do
 
-          results = subject.find_my_widgets(user.token)
+          results = subject.find_my_widgets(user_token)
 
           expect(results).to be_a(Hash)
           expect(results).to have_key(:data)
