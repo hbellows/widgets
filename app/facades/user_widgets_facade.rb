@@ -1,4 +1,5 @@
 class UserWidgetsFacade
+  include ClientConnector
 
   attr_reader :user_id  
 
@@ -21,10 +22,6 @@ class UserWidgetsFacade
   end
 
   private
-
-  def showoff_client
-    @showoff_client ||= ShowoffClient.new
-  end
 
   def user_widgets_data
     showoff_client.find_user_widgets(user_id)[:data][:widgets]

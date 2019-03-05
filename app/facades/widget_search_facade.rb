@@ -1,4 +1,5 @@
 class WidgetSearchFacade
+  include ClientConnector
 
   attr_reader :keyword
 
@@ -21,10 +22,6 @@ class WidgetSearchFacade
   end
 
   private
-
-  def showoff_client
-    @showoff_client ||= ShowoffClient.new
-  end
 
   def widget_search_data
     showoff_client.search_widgets(keyword)[:data][:widgets]
