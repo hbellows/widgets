@@ -24,6 +24,6 @@ class WidgetSearchFacade
   private
 
   def widget_search_data
-    showoff_client.search_widgets(keyword)[:data][:widgets]
+    showoff_widget_client.search_widgets(keyword)[:data][:widgets]
   end
 end

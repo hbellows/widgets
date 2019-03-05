@@ -10,6 +10,6 @@ class WidgetsFacade
   private
 
   def widget_data
-    showoff_client.find_widgets[:data][:widgets]
+    showoff_widget_client.find_widgets[:data][:widgets]
   end
 end
