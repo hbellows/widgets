@@ -1,7 +1,7 @@
 require 'rails_helper' 
 
 context 'Guest Registration' do
-  describe 'Guest provides all required information' do
+  xdescribe 'Guest provides all required information' do
     it 'registers the guest' do
       visit '/widgets'
       click_on 'Sign Up'
