@@ -13,6 +13,18 @@
         <li class="nav-item">
           <%= link_to 'Sign Up', new_user_path, class: 'nav-link' %>
         </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', logout_path, method: :delete, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'My Widgets', dashboard_path, class: 'nav-link' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign In', login_path, class: 'nav-link' %>
+          </li>
+        <% end %>
         
       </ul>
         <%= form_tag :search, method: :get, class: "search-box form-inline" do %>
