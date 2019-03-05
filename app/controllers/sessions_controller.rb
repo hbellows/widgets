@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
 
   def create
     session[:user_id] = user.id
-    flash.alert = 'Successfully signed in'
+    flash.notice = 'Successfully signed in'
     redirect_to dashboard_path
   end
 
   def destroy
-    flash[:success] = 'Successfully signed out'
+    flash.notice = 'Successfully signed out'
     redirect_to widgets_path
   end
   
