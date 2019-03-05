@@ -6,10 +6,13 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show'
 
+  get '/register', to: 'registration#new', as: 'register'
+  post '/register', to: 'registration#create', as: 'new_registration'
+
   get '/login',     to: 'sessions#new',     as: 'login'
   post '/login',    to: 'sessions#create',  as: 'new_login'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   
   resources :widgets, only: %i[index show]
-  resources :users, only: %i[new create show]
+  # resources :users, only: %i[new create show]
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-context 'Signed in user views' do
+xcontext 'Signed in user views' do
   describe 'Signed in user sees their own widgets' do
     it 'displays hidden and visible widgets created by the current user' do
       user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
