@@ -96,5 +96,7 @@ Issues needing additional support:
 <img src="./screenshots/user_dashboard.png">
 
 ## Known Issues
+Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
 
 ## Contributors/Developers
+[Me!](@hbellows)

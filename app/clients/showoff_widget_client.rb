@@ -1,11 +1,11 @@
-class ShowoffClient
-  include ApiConnector
+class ShowoffWidgetClient
+  include WidgetConnector
 
   def find_widgets
     get_json('/api/v1/widgets/visible')
   end
 
-  def find_user_widgets(user_id)
+  def find_widgets_by_user(user_id)
     get_json("/api/v1/users/#{user_id}/widgets")
   end
 

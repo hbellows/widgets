@@ -2,7 +2,11 @@ require 'rails_helper'
 
 context 'User can log in and log out' do
   before(:each) do
-    @user = User.create!(first_name: 'Old', last_name: 'Gregg', email: 'imoldgregg@cave.com', password: 'baileys', password_confirmation: 'baileys')
+    @user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
+                         password: 'hamburger1', password_confirmation: 'hamburger1',
+                         token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
+                         refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
+                        )
   end
 
   describe 'User provides complete and correct credentials' do
@@ -18,7 +22,7 @@ context 'User can log in and log out' do
 
       expect(current_path).to eq(dashboard_path)
       expect(page).to have_content('Successfully signed in')
-      expect(page).to have_content('Welcome, Old')
+      expect(page).to have_content('Welcome, Me')
     end
   end
 
@@ -63,7 +67,7 @@ context 'User can log in and log out' do
       click_on 'Sign Out'
 
       expect(current_path).to eq(widgets_path)
-      expect(page).to_not have_content('Welcome, Old')
+      expect(page).to_not have_content('Welcome, Me')
     end
   end
 end

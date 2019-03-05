@@ -5,7 +5,7 @@ class WidgetsController < ApplicationController
   end
 
   def show
-    @user_widgets = UserWidgetsFacade.new(params[:id])
+    @widgets_by_user = WidgetsByUserFacade.new(params[:id])
   end
 
 end

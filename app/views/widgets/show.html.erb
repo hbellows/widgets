@@ -2,17 +2,17 @@
   <div class='container-fluid'>
     <div class='row'>
       <div class='col-1'>
-        <img src="<%= @user_widgets.avatar %>" alt="avatar" height="100" width="100" class="img-fluid img-thumbnail"> 
+        <img src="<%= @widgets_by_user.avatar %>" alt="avatar" height="100" width="100" class="img-fluid img-thumbnail"> 
       </div>
       <div class='col-2'>
-        <h3><%= @user_widgets.created_by %>'s Widgets</h3>
+        <h3><%= @widgets_by_user.created_by %>'s Widgets</h3>
       </div>  
     </div>
   </div4
 </div>
 
 <div class='list-group'>
-  <% @user_widgets.visible.each do |widget|%>
+  <% @widgets_by_user.visible.each do |widget|%>
   <div class="d-flex w-100 justify-content-between">
     <ul id='widget' class="list-group list-group-flush" >
       <li class="list-group-item"><h3><%= widget.name %></h3>
