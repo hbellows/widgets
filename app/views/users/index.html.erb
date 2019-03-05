@@ -1,0 +1,27 @@
+<h1>Welcome, <%= @user.first_name %></h1>
+
+<div class='my-visible-widgets'>
+  <div class="list-group">
+  <h2>Visible Widgets</h2>
+    <% @my_widgets.visible.each do |widget| %>
+      <ul id='visible-widget' class="list-group list-group-flush">
+        <li class="list-group-item"><h3><%= widget.name %></h3>
+        <h5><%= widget.description %></h5>
+        </li>
+      </ul>
+    </div>
+  <% end%>
+</div>
+
+<div class='my-hidden-widgets'>
+  <div class="list-group">
+  <h2>Hidden Widgets</h2>
+    <% @my_widgets.hidden.each do |widget| %>
+      <ul id='hidden-widget' class="list-group list-group-flush">
+        <li class="list-group-item"><h3><%= widget.name %></h3>
+        <h5><%= widget.description %></h5>
+        </li>
+      </ul>
+    </div>
+  <% end%>
+</div>

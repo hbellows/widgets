@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#index'
 
-  get '/dashboard', to: 'users#show'
+  get '/dashboard', to: 'users#index'
 
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create', as: 'new_registration'
@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   
   resources :widgets, only: %i[index show]
-  # resources :users, only: %i[new create show]
+  resources :users, only: %i[index show]
 end

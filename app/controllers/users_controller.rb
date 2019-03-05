@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
-  before_action :require_user, :user, only: :show
+  before_action :require_user, :user, only: :index
 
-  def show; end
+  def index
+    @my_widgets = UserWidgetsFacade.new(current_user)
+  end
+
+  # def show
+    
+  # end
 
   private
 

@@ -23,3 +23,9 @@ user_2 = User.create!(first_name: 'Just', last_name: 'Anotheruser', email: 'user
                       token: '4a03a329ebdc460be35d452132e9fa671279da9e236bf1b115beb1815baf3996', 
                       refresh: '70399b9ad64130d9e85aab6f4e96144225330113704a62c4ea1afbe1262dca2b'
                       )
+
+user_3 = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
+                      password: 'hamburger1', password_confirmation: 'hamburger1',
+                      token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
+                      refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
+                      )
