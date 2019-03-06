@@ -1,4 +1,4 @@
-class UserWidgetsFacade
+class MyWidgetsFacade
   include ClientConnector
 
   attr_reader :user_id, :user_token

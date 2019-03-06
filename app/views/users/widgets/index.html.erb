@@ -1,27 +1,41 @@
-<h1>Welcome, <%= @user.first_name %></h1>
+<nav id='user-nav' class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <h2>Welcome, <%= @user.first_name %></h2>
+    </ul>
+      <%= form_tag :users_search_index, method: :get, class: "search-box form-inline" do %>
+        <div class="form-group search-field">
+          <%= text_field_tag :user_widget, nil, placeholder: 'Search My Widgets', class: "form-control mr-2" %>
+          <%= submit_tag 'Search', class: 'btn btn-outline-primary my-2 my-sm-0' %>
+        </div>
+      <% end %>
+  </div>
+</nav>
 
-<div class='my-visible-widgets'>
-  <div class="list-group">
-  <h2>Visible Widgets</h2>
-    <% @my_widgets.visible.each do |widget| %>
-      <ul id='visible-widget' class="list-group list-group-flush">
-        <li class="list-group-item"><h3><%= widget.name %></h3>
-        <h5><%= widget.description %></h5>
-        </li>
-      </ul>
-    </div>
-  <% end%>
-</div>
+<div class='container-fluid'>
+  <div class='my-visible-widgets'>
+    <div class="list-group">
+    <h3>Visible Widgets</h3>
+      <% @my_widgets.visible.each do |widget| %>
+        <ul id='visible-widget' class="list-group list-group-flush">
+          <li class="list-group-item"><h3><%= widget.name %></h3>
+          <h5><%= widget.description %></h5>
+          </li>
+        </ul>
+      </div>
+    <% end%>
+  </div>
 
-<div class='my-hidden-widgets'>
-  <div class="list-group">
-  <h2>Hidden Widgets</h2>
-    <% @my_widgets.hidden.each do |widget| %>
-      <ul id='hidden-widget' class="list-group list-group-flush">
-        <li class="list-group-item"><h3><%= widget.name %></h3>
-        <h5><%= widget.description %></h5>
-        </li>
-      </ul>
-    </div>
-  <% end%>
+  <div class='my-hidden-widgets'>
+    <div class="list-group">
+    <h3>Hidden Widgets</h3>
+      <% @my_widgets.hidden.each do |widget| %>
+        <ul id='hidden-widget' class="list-group list-group-flush">
+          <li class="list-group-item"><h3><%= widget.name %></h3>
+          <h5><%= widget.description %></h5>
+          </li>
+        </ul>
+      </div>
+    <% end%>
+  </div>
 </div>

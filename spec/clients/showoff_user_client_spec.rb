@@ -1,14 +1,8 @@
 require 'rails_helper'
 
 describe ShowoffUserClient do
-  # user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
-  #   password: 'hamburger1', password_confirmation: 'hamburger1',
-  #   token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
-  #   refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
-  #   ) 
 
   user_token = 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0'
-
   subject { ShowoffUserClient.new(user_token) }
   
   it 'exists' do
@@ -45,10 +39,10 @@ describe ShowoffUserClient do
       end
     end
 
-    xdescribe '#search_my_widgets' do
+    describe '#search_my_widgets' do
       it 'returns user\'s search results' do
         VCR.use_cassette('search_my_widgets') do
-
+          keyword = 'widget'
           results = subject.search_my_widgets(user_token, keyword)
 
           expect(results).to be_a(Hash)

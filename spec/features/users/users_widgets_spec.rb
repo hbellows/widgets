@@ -46,24 +46,20 @@ context 'Signed in user can' do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
         visit '/dashboard'
-
-        fill_in :q, with: :not
-
-        expect(page).to have_content('Welcome, Me')
-        expect(page).to have_css('#visible-widget', count: 1)
-        expect(page).to have_css('#hidden-widget', count: 1)
-
-        within(first('#visible-widget')) do
-          expect(page).to have_content('Super Sweet Widget')
-          expect(page).to have_content('So so sweet')
+        
+        within('#user-nav') do
+          fill_in :user_widget, with: :not
+          click_on 'Search'
         end
 
-        within(first('#hidden-widget')) do
+        expect(page).to have_content('1 widgets found')
+
+        within(first('#widget')) do
           expect(page).to have_content('Not So Super Sweet Widget')
           expect(page).to have_content('Not very sweet')
+          expect(page).to have_content('hidden')
         end
       end
     end
   end
-
 end
