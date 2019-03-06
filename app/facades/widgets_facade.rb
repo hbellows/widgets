@@ -3,7 +3,7 @@ class WidgetsFacade
 
   def visible
     widget_data.map do |widget|
-      Widget.new(widget)
+      WidgetMaker.new(widget)
     end
   end
 

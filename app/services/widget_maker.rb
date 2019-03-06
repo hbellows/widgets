@@ -1,4 +1,4 @@
-class Widget
+class WidgetMaker
 
   attr_reader :name, 
               :description,

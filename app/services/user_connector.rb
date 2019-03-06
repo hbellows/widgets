@@ -13,4 +13,12 @@ module UserConnector
   def get_json(url)
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end
+
+  def post_payload(payload)
+    conn.post do |req|
+      req.url '/api/v1/widgets'
+      req.headers['Content-Type'] = 'application/json'
+      req.body = payload.to_json
+    end
+  end
 end

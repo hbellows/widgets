@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#index'
 
-  get '/dashboard', to: 'users/widgets#index'
+  get '/dashboard', to: 'user_widgets#index'
 
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create', as: 'new_registration'
@@ -15,9 +15,15 @@ Rails.application.routes.draw do
   
   resources :widgets, only: %i[index show]
 
-  namespace :users do
-    resources :widgets
-    resources :search, only: %i[index]
-  end
+  # resources :widgets, module: :users, only: %i[index new create]
+  # resources :search, module: :users, only: %i[index]
+
+  resources :user_search, only: %i[index]
+  # resources :user_widgets, only: %i[new create]
+  get '/user_widgets', to: 'user_widgets#new', as: 'my_widgets'
+  post '/user_widgets', to: 'user_widgets#create', as: 'my_new_widget'
+
+
+
 
 end

@@ -17,7 +17,7 @@ class WidgetsByUserFacade
 
   def visible
     widgets_by_user_data.map do |widget|
-      Widget.new(widget)
+      WidgetMaker.new(widget)
     end
   end
 
