@@ -9,7 +9,7 @@ class UserWidgetsController < ApplicationController
   end
   
   def create
-    @make_widget = NewWidgetFacade.new(widget_params)
+    @make_widget = MyNewWidgetFacade.new(current_user, widget_params).create_new_widget
   end
 
   private
