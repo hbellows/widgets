@@ -17,8 +17,6 @@ context 'Signed in user can' do
         visit '/dashboard'
 
         expect(page).to have_content('Welcome, Me')
-        expect(page).to have_css('#visible-widget', count: 1)
-        expect(page).to have_css('#hidden-widget', count: 1)
 
         within(first('#visible-widget')) do
           expect(page).to have_content('Super Sweet Widget')
