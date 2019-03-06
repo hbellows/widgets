@@ -79,7 +79,7 @@ context 'Signed in user can' do
         
         click_on 'New Widget'
 
-        expect(current_path).to eq(new_users_widgets_path)
+        expect(current_path).to eq(new_users_widget_path)
 
         fill_in :name, with: 'Totally new widget'
         fill_in :description, with: 'Super rad widget'
