@@ -62,4 +62,38 @@ context 'Signed in user can' do
       end
     end
   end
+
+  describe 'Create a widget' do
+    it 'displays the newly created in the user\'s list of widgets' do
+      VCR.use_cassette('User Create Widget Page') do
+
+        user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
+          password: 'hamburger1', password_confirmation: 'hamburger1',
+          token: 'aa2957980f434f5cf33e9b85f943ccdc83dfa5b6663bcbb1054ac206365893c0', 
+          refresh: 'e37fc760e82d4de58e82a50dbbd4c83e72e2580e4b1fd74fa6d3ade1007886b1' 
+          )
+        
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+        visit '/dashboard'
+        
+        click_on 'New Widget'
+
+        expect(current_path).to eq(new_users_widgets_path)
+
+        fill_in :name, with: 'Totally new widget'
+        fill_in :description, with: 'Super rad widget'
+        fill_in :kind, with: 'visible'
+
+        click_on 'Create Widget'
+
+        expect(current_path).to eq(dashboard_path)
+
+        within('#my-visible-widgets') do
+          expect(page).to have_content('Totally new widget')
+          expect(page).to have_content('Super rad widget')
+        end
+      end
+    end
+  end
 end
