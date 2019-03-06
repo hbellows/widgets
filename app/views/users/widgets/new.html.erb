@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center">
+  <div class="col-md-8">
+    <h2>Make A New Widget</h2>
+    <%= form_for :users_widgets do |f| %>
+
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <%= f.label      :name %>
+          <%= f.text_field :name,
+                           class: 'form-control',
+                           placeholder: 'Widget Name',
+                           required: true 
+          %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <%= f.label      :description %>
+          <%= f.text_field :description, 
+                            class: 'form-control', 
+                            placeholder: 'Widget Description', 
+                            required: true
+          %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Kind of Widget</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>visible</option>
+              <option>hidden</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row float-left">
+        <div class="form-group">
+          <%= f.submit 'Create Widget', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
