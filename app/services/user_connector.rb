@@ -21,4 +21,12 @@ module UserConnector
       req.body = payload.to_json
     end
   end
+
+  def put_payload(payload)
+    conn.put do |req|
+      req.url "/api/v1/widgets/#{widget_id}"
+      req.headers['Content-Type'] = 'application/json'
+      req.body = payload.to_json
+    end
+  end
 end
