@@ -11,7 +11,6 @@ describe 'Widget Search' do
 
         expect(current_path).to eq('/search')
 
-        expect(page).to have_content('7 widgets found')
         expect(page).to have_css('#widget')
         within(first('#widget')) do
           expect(page).to have_content('A Visible Widget')

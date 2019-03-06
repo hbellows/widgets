@@ -10,7 +10,7 @@ class MyWidgetSearchFacade
 
   def visible
     user_widget_search_data.map do |widget|
-      Widget.new(widget)
+      WidgetMaker.new(widget)
     end
   end
 

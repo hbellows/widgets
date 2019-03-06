@@ -10,13 +10,13 @@ class MyWidgetsFacade
 
   def visible
     find_visible_widgets.map do |widget|
-      Widget.new(widget)
+      WidgetMaker.new(widget)
     end
   end
   
   def hidden
     find_hidden_widgets.map do |widget|
-      Widget.new(widget)
+      WidgetMaker.new(widget)
     end
   end
 
