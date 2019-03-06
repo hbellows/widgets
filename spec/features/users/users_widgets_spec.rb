@@ -65,7 +65,7 @@ context 'Signed in user can' do
 
   describe 'Create a widget' do
     it 'displays the newly created in the user\'s list of widgets' do
-      # VCR.use_cassette('User Create Widget Page') do
+      VCR.use_cassette('User Create Widget Page') do
 
         user = User.create!(first_name: 'Me', last_name: 'Myself', email: 'me@me.com',
           password: 'hamburger1', password_confirmation: 'hamburger1',
@@ -90,11 +90,11 @@ context 'Signed in user can' do
 
         expect(current_path).to eq(dashboard_path)
 
-        within('#my-visible-widgets') do
+        within('.my-visible-widgets') do
           expect(page).to have_content('Totally new widget')
-          expect(page).to have_content('Super rad widget')
+          expect(page).to have_content('Super rad new widget')
         end
-      # end
+      end
     end
   end
 end

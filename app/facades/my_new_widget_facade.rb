@@ -3,21 +3,17 @@ class MyNewWidgetFacade
 
   attr_reader :user_token, :widget_data
 
-  def initialize(user_token, widget_data)
+  def initialize(user, widget_data)
     @user_token = user.token
     @widget_data = widget_data
   end
 
-  
-  private
-  attr_reader :create_new_widget
-
   def payload
     {
-      widget: {
-                name: widget_data[:name],
-                description: widget_data[:description],
-                kind: widget_data[:kind]
+      "widget": {
+                "name": widget_data[:name],
+                "description": widget_data[:description],
+                "kind": widget_data[:kind]
               }
     }
   end

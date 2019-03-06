@@ -10,6 +10,7 @@ class UserWidgetsController < ApplicationController
   
   def create
     @make_widget = MyNewWidgetFacade.new(current_user, widget_params).create_new_widget
+    redirect_to dashboard_path
   end
 
   private
