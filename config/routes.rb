@@ -4,26 +4,25 @@ Rails.application.routes.draw do
 
   get '/search', to: 'search#index'
 
-  get '/dashboard', to: 'user_widgets#index'
-
+  
   get '/register', to: 'registration#new', as: 'register'
   post '/register', to: 'registration#create', as: 'new_registration'
-
+  
   get '/login',     to: 'sessions#new',     as: 'login'
   post '/login',    to: 'sessions#create',  as: 'new_login'
   delete '/logout', to: 'sessions#destroy', as: 'logout'
   
   resources :widgets, only: %i[index show]
-
-  # resources :widgets, module: :users, only: %i[index new create]
-  # resources :search, module: :users, only: %i[index]
-
+  
   resources :user_search, only: %i[index]
-  # resources :user_widgets, only: %i[new create]
+  
+  get '/dashboard', to: 'user_widgets#index'
+
   get '/user_widgets', to: 'user_widgets#new', as: 'my_widgets'
   post '/user_widgets', to: 'user_widgets#create', as: 'my_new_widget'
 
+  get 'user_widgets/:id/edit', to: 'user_widgets#edit', as: 'edit_widget'
+  put 'user_widgets/:id', to: 'user_widgets#update', as: 'update_widget'
 
-
-
+  delete 'user_widgets/:id', to: 'user_widgets#destroy', as: 'delete_widget'
 end
