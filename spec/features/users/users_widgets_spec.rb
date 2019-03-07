@@ -141,7 +141,7 @@ context 'Signed in user can' do
 
   describe 'Delete a widget' do
     it 'deleted widget is not displayed in the user\'s list of widgets' do
-      # VCR.use_cassette('User Delete Widget Page') do
+      VCR.use_cassette('User Delete Widget Page') do
 
         user = User.create!(first_name: 'Boss', last_name: 'Baby', email: 'boss@me.com',
           password: 'imabossbaby', password_confirmation: 'imabossbaby',
@@ -150,6 +150,7 @@ context 'Signed in user can' do
         )
         
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
         #----------CREATE WIDGET------------------------------
         visit '/dashboard'
 
@@ -180,21 +181,8 @@ context 'Signed in user can' do
         expect(current_path).to eq(dashboard_path)
 
         expect(page).to_not have_content('Test Widget')
-        expect(page).to_not have_contect("I'm visible!")
-
-        #-----------RECREATE WIDGET FOR CI--------------------
-
-        click_on 'New Widget'
-
-        expect(current_path).to eq(new_widget_path)
-
-        fill_in :user_widgets_name, with: 'Test Widget'
-        fill_in :user_widgets_description, with: "I'm visible!"
-        choose('Visible')
-
-        click_on 'Create Widget'
-      # end
+        expect(page).to_not have_content("I'm visible!")
+      end
     end
   end
-
 end
