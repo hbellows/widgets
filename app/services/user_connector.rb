@@ -36,8 +36,4 @@ module UserConnector
       req.headers['Content-Type'] = 'application/json'
     end
   end
-
-  # def post_response(payload)
-  #   JSON.parse(post_payload(payload).body, symbolize_names: true)
-  # end
 end
