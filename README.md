@@ -15,9 +15,9 @@
 * [Running Tests](#running-tests)
 * [Dependencies](#dependencies)
 * [Screenshots](#screenshots)
-    * [Widgets](#widgets)
-    * [User Widgets](#user-widgets)
-    * [Widget Search](#widget-search)
+    * [Home](#home)
+    * [Widget by User](#widget-by-user)
+    * [User Dashboard](#user-dashboard)
 * [How To Contribute](#how-to-contribute)
 * [Contributors/Developers](#contributorsdevelopers)
 
@@ -52,17 +52,14 @@ Run `rspec` to run the full test suite, or `rails s` to load up the application 
  ### All Environments
  - [Rails](https://guides.rubyonrails.org/)
  - [Postgresql](https://www.postgresql.org/)
- - [Puma](https://github.com/puma/puma)
- - [Bootsnap](https://github.com/Shopify/bootsnap)
  - [Faraday](https://github.com/lostisland/faraday)
  - [Figaro](https://github.com/laserlemon/figaro)
- - [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+ - [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+ - [Bcrypt](https://github.com/codahale/bcrypt-ruby)
 
  ### Development
  - [Rspec for Rails](https://github.com/rspec/rspec-rails)
- - [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
  - [Pry for Rails](https://github.com/rweng/pry-rails)
- - [Awesome Print](https://github.com/awesome-print/awesome_print)
  - [Fuubar](https://github.com/thekompanee/fuubar)
  
  ### Test
@@ -72,6 +69,7 @@ Run `rspec` to run the full test suite, or `rails s` to load up the application 
  - [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
  - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
  - [Simplecov](https://github.com/colszowka/simplecov)
+ - [Launcy](https://github.com/copiousfreetime/launchy)
   
 # How to Contribute
 Widgets is an open source project. We invite your participation through issues and pull requests! 
@@ -82,21 +80,23 @@ Issues needing additional support:
 - Desperately needs styling love!
 
 ## Screenshots
-### Widgets
+### Home
 
 <img src="./screenshots/home_view.png">
 
 
-### User Widgets
+### Widget by User
 
-<img src="./screenshots/user_dashboard.png">
+<img src="./screenshots/widget_by_user_view.png">
 
-### Widget Search
+### User Dashboard
 
-<img src="./screenshots/user_dashboard.png">
+<img src="./screenshots/dashboard_view.png">
 
 ## Known Issues
-Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+ - Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+  - Oauth has not yet been implemented.
+  - New Widget link should appear on main nav bar, and when a unregistered/unlogged in user clicks the link, a modal should appear with sign up/sign in forms
 
 ## Contributors/Developers
 [Me!](@hbellows)
