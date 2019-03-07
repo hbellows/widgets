@@ -135,6 +135,8 @@ context 'Signed in user can' do
 
         fill_in :user_widgets_description, with: "I'm visible"
         choose('Visible')
+
+        click_on 'Edit Widget'
       end
     end
   end
