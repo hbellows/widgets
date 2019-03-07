@@ -13,6 +13,7 @@
 * [System Requirements](#system-requirements)
 * [Initial Setup](#initial-setup)
 * [Running Tests](#running-tests)
+* [Known Issues](#known-issues)
 * [Dependencies](#dependencies)
 * [Screenshots](#screenshots)
     * [Widgets](#widgets)
@@ -48,6 +49,10 @@ Track the progress of this application [here](https://github.com/hbellows/widget
 7. Or, use go [here](https://widgets-app.herokuapp.com/) to see the application live
 ## Running Tests
 Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
+
+## Known Issues
+Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+
 ## Dependencies
  ### All Environments
  - [Rails](https://guides.rubyonrails.org/)
@@ -72,14 +77,6 @@ Run `rspec` to run the full test suite, or `rails s` to load up the application 
  - [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
  - [Database Cleaner](https://github.com/DatabaseCleaner/database_cleaner)
  - [Simplecov](https://github.com/colszowka/simplecov)
-  
-# How to Contribute
-Widgets is an open source project. We invite your participation through issues and pull requests! 
-
-When adding or changing a service please add tests.
-
-Issues needing additional support:
-- Desperately needs styling love!
 
 ## Screenshots
 ### Widgets
@@ -89,14 +86,17 @@ Issues needing additional support:
 
 ### User Widgets
 
-<img src="./screenshots/user_dashboard.png">
+<img src="./screenshots/widget_by_user_view.png">
 
 ### Widget Search
 
-<img src="./screenshots/user_dashboard.png">
+<img src="./screenshots/dashboard_view.png">
 
-## Known Issues
-Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+# How to Contribute
+Widgets is an open source project. We invite your participation through issues and pull requests! 
+
+When adding or changing a service please add tests.
+
 
 ## Contributors/Developers
 [Me!](@hbellows)
