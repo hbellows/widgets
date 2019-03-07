@@ -1,6 +1,7 @@
 class WidgetMaker
 
-  attr_reader :name, 
+  attr_reader :widget_id,
+              :name, 
               :description,
               :kind,
               :user_id,

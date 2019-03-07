@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to 'New Widget', my_widgets_path, class: 'nav-link' %>
+        <%= link_to 'New Widget', new_widget_path, class: 'nav-link' %>
       </li>
     </ul>
       <%= form_tag :user_search_index, method: :get, class: "search-box form-inline" do %>
@@ -27,6 +27,8 @@
         <ul id='visible-widget' class="list-group list-group-flush">
           <li class="list-group-item"><h4><%= widget.name %></h4>
           <h5><%= widget.description %></h5>
+          <%= link_to 'Edit', edit_widget_path(widget.widget_id) %> |
+          <%= link_to 'Delete', delete_widget_path(widget.widget_id), method: :delete %>
           </li>
         </ul>
       </div>
@@ -35,11 +37,13 @@
 
   <div class='my-hidden-widgets'>
     <div class="list-group">
-    <h3>Hidden Widgets</h3>
+    <h4>Hidden Widgets</h4>
       <% @my_widgets.hidden.each do |widget| %>
         <ul id='hidden-widget' class="list-group list-group-flush">
           <li class="list-group-item"><h3><%= widget.name %></h3>
           <h5><%= widget.description %></h5>
+          <%= link_to 'Edit', edit_widget_path(widget.widget_id) %> |
+          <%= link_to 'Delete', delete_widget_path(widget.widget_id) %>
           </li>
         </ul>
       </div>
