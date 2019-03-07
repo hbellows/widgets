@@ -1,5 +1,5 @@
 class UserWidgetsController < ApplicationController
-  before_action :require_user, :user, only: %i[index new create]
+  before_action :require_user, :user, except: %i[show]
 
   def index
     @my_widgets = MyWidgetsFacade.new(current_user)
@@ -15,8 +15,7 @@ class UserWidgetsController < ApplicationController
   def edit; end
 
   def update
-    binding.pry
-    @edit_widget = MyEditWidgetFacade.new(current_user, widget_params).edit_widget
+    @edit_widget = MyEditWidgetFacade.new(current_user, widget_params, params[:id]).edit_widget
     redirect_to dashboard_path
   end
 
@@ -29,5 +28,4 @@ class UserWidgetsController < ApplicationController
   def user
     @user ||= User.find(current_user.id)
   end
-
 end
