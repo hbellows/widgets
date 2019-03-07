@@ -17,7 +17,7 @@ class ShowoffUserClient
     post_payload(payload)
   end
 
-  def put_new_widget(user_token, payload)
-    put_payload(payload)
+  def put_widget(user_token, widget_id, payload)
+    put_payload(widget_id, payload)
   end
 end
