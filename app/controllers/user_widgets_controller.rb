@@ -19,6 +19,11 @@ class UserWidgetsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    @delete_widget = MyDeleteWidgetFacade.new(current_user, params[:id]).delete_widget
+    redirect_to dashboard_path
+  end
+
   private
 
   def widget_params
