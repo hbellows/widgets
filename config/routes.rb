@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   post '/user_widgets', to: 'user_widgets#create', as: 'create_widget'
 
   get 'user_widgets/:id/edit', to: 'user_widgets#edit', as: 'edit_widget'
-  post 'user_widgets/:id', to: 'user_widgets#update', as: 'update_widget'
+  put 'user_widgets/:id', to: 'user_widgets#update', as: 'update_widget'
 
   delete 'user_widgets/:id', to: 'user_widgets#destroy', as: 'delete_widget'
 end
