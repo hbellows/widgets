@@ -20,4 +20,8 @@ class ShowoffUserClient
   def put_widget(user_token, widget_id, payload)
     put_payload(widget_id, payload)
   end
+
+  def delete_widget(user_token, widget_id)
+    delete(widget_id)
+  end
 end
