@@ -107,32 +107,94 @@ context 'Signed in user can' do
           )
         
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
-        visit '/dashboard'
         
+        visit '/dashboard'
+
         within(first('#visible-widget')) do
+
+          expect(page).to_not have_content("I'm hidden!")
           click_on 'Edit'
         end
 
-        expect(current_path).to eq(edit_widget_path(134))
 
-        fill_in :user_widgets_description, with: "I'm hiding"
+        fill_in :user_widgets_description, with: "I'm hiding!"
         choose('Hidden')
 
         click_on 'Edit Widget'
 
         expect(current_path).to eq(dashboard_path)
 
-        within('.my-visible-widgets') do
-          expect(page).to_not have_content('New Hotness')
-          expect(page).to_not have_content('totes new newness')
+        within(first('#hidden-widget')) do
+          expect(page).to have_content("I'm hiding!")
         end
 
-        within('.my-hidden-widgets') do
-          expect(page).to have_content('New Hotness')
-          expect(page).to have_content("I'm hiding")
+        #---------------RESET WIDGET FOR CI-------------------
+        within(first('#hidden-widget')) do
+          click_on 'Edit'
         end
+
+        fill_in :user_widgets_description, with: "I'm visible"
+        choose('Visible')
       end
     end
   end
+
+  describe 'Delete a widget' do
+    it 'deleted widget is not displayed in the user\'s list of widgets' do
+      # VCR.use_cassette('User Delete Widget Page') do
+
+        user = User.create!(first_name: 'Boss', last_name: 'Baby', email: 'boss@me.com',
+          password: 'imabossbaby', password_confirmation: 'imabossbaby',
+          token: '4355f094978ce1c7dbc074a8a07056b402b60f13adbb39f2893becd9dc256e9d',
+          refresh: '301c9c023c798d38a0c97067b8164b9cd0eb2e91827e9e28ad8e4208c35f4453'
+        )
+        
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        #----------CREATE WIDGET------------------------------
+        visit '/dashboard'
+
+        click_on 'New Widget'
+
+        expect(current_path).to eq(new_widget_path)
+
+
+        fill_in :user_widgets_name, with: 'Test Widget'
+        fill_in :user_widgets_description, with: "I'm visible!"
+        choose('Visible')
+
+        click_on 'Create Widget'
+
+        expect(current_path).to eq(dashboard_path)
+
+        within(first('#visible-widget')) do
+          expect(page).to have_content('Test Widget')
+          expect(page).to have_content("I'm visible!")
+        end
+
+        #----------DELETE WIDGET------------------------------
+
+        within(first('#visible-widget')) do
+          click_on 'Delete'
+        end
+
+        expect(current_path).to eq(dashboard_path)
+
+        expect(page).to_not have_content('Test Widget')
+        expect(page).to_not have_contect("I'm visible!")
+
+        #-----------RECREATE WIDGET FOR CI--------------------
+
+        click_on 'New Widget'
+
+        expect(current_path).to eq(new_widget_path)
+
+        fill_in :user_widgets_name, with: 'Test Widget'
+        fill_in :user_widgets_description, with: "I'm visible!"
+        choose('Visible')
+
+        click_on 'Create Widget'
+      # end
+    end
+  end
+
 end
