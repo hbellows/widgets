@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-test_user = User.create!(first_name: 'Test User', last_name: 'Test', email: 'test@test.com',
+test_user = User.create!(first_name: 'Testing', last_name: 'User', email: 'user@test.com',
                          password: 'password', password_confirmation: 'password',
-                         token: '069240457ddcc21dc0e66dd45b5c0bb7baa96808b7bdcbb3cefd76a04a1cbcfa', 
-                         refresh: 'e366165de1a3231e898a2a2f9d4cf26d55e3c32071d9b4341508eafea3bc81da' 
+                         token: '94d0676cd3a0f7644b30ac404a5d5292bdf2a39225a5f76806740872928f0080', 
+                         refresh: '31f9144420feef7f3b6516a6ac6d256cf6895eddf2cefa299a1ee3001ac6ab05' 
                         )
 
 user_1 = User.create!(first_name: 'Justa', last_name: 'User', email: 'user@me.com',
