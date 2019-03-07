@@ -123,12 +123,12 @@ context 'Signed in user can' do
 
         expect(current_path).to eq(dashboard_path)
 
-        within(first('#visible-widget')) do
+        within('.my-visible-widgets') do
           expect(page).to_not have_content('New Hotness')
           expect(page).to_not have_content('totes new newness')
         end
 
-        within(first('#hidden-widget')) do
+        within('.my-hidden-widgets') do
           expect(page).to have_content('New Hotness')
           expect(page).to have_content("I'm hiding")
         end
