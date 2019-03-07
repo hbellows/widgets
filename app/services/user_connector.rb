@@ -30,6 +30,13 @@ module UserConnector
     end
   end
 
+  def delete(widget_id)
+    conn.delete do |req|
+      req.url "/api/v1/widgets/#{widget_id}"
+      req.headers['Content-Type'] = 'application/json'
+    end
+  end
+
   # def post_response(payload)
   #   JSON.parse(post_payload(payload).body, symbolize_names: true)
   # end
