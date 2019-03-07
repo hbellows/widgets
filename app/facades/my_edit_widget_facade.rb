@@ -14,11 +14,9 @@ class MyEditWidgetFacade
     unless data[:name] == ''
       payload[:name] = data[:name]
     end
-    payload
     unless data[:description] == ''
       payload[:description] = data[:description]
     end
-    payload
     unless data[:kind] == ''
       payload[:kind] = data[:kind]
     end
