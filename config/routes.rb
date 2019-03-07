@@ -15,14 +15,14 @@ Rails.application.routes.draw do
   resources :widgets, only: %i[index show]
   
   resources :user_search, only: %i[index]
-  
+
   get '/dashboard', to: 'user_widgets#index'
 
-  get '/user_widgets', to: 'user_widgets#new', as: 'my_widgets'
-  post '/user_widgets', to: 'user_widgets#create', as: 'my_new_widget'
+  get '/user_widgets', to: 'user_widgets#new', as: 'new_widget'
+  post '/user_widgets', to: 'user_widgets#create', as: 'create_widget'
 
   get 'user_widgets/:id/edit', to: 'user_widgets#edit', as: 'edit_widget'
-  put 'user_widgets/:id', to: 'user_widgets#update', as: 'update_widget'
+  post 'user_widgets/:id', to: 'user_widgets#update', as: 'update_widget'
 
   delete 'user_widgets/:id', to: 'user_widgets#destroy', as: 'delete_widget'
 end

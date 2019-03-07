@@ -5,11 +5,18 @@ class UserWidgetsController < ApplicationController
     @my_widgets = MyWidgetsFacade.new(current_user)
   end
 
-  def new
-  end
+  def new; end
   
   def create
     @make_widget = MyNewWidgetFacade.new(current_user, widget_params).create_new_widget
+    redirect_to dashboard_path
+  end
+
+  def edit; end
+
+  def update
+    binding.pry
+    @edit_widget = MyEditWidgetFacade.new(current_user, widget_params).edit_widget
     redirect_to dashboard_path
   end
 
