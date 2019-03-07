@@ -22,11 +22,15 @@ module UserConnector
     end
   end
 
-  def put_payload(payload)
+  def put_payload(widget_id, payload)
     conn.put do |req|
       req.url "/api/v1/widgets/#{widget_id}"
       req.headers['Content-Type'] = 'application/json'
       req.body = payload.to_json
     end
   end
+
+  # def post_response(payload)
+  #   JSON.parse(post_payload(payload).body, symbolize_names: true)
+  # end
 end
