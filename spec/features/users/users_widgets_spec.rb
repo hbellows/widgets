@@ -80,8 +80,8 @@ context 'Signed in user can' do
         expect(current_path).to eq(new_widget_path)
 
 
-        fill_in :user_widgets_name, with: 'Totally new widget'
-        fill_in :user_widgets_description, with: 'Super rad new widget'
+        fill_in :user_widgets_name, with: 'New Widgety Widget'
+        fill_in :user_widgets_description, with: 'So shiny'
         choose('Visible')
 
         click_on 'Create Widget'
@@ -89,8 +89,8 @@ context 'Signed in user can' do
         expect(current_path).to eq(dashboard_path)
 
         within('.my-visible-widgets') do
-          expect(page).to have_content('Totally new widget')
-          expect(page).to have_content('Super rad new widget')
+          expect(page).to have_content('New Widgety Widget')
+          expect(page).to have_content('So shiny')
         end
       end
     end
@@ -116,8 +116,7 @@ context 'Signed in user can' do
 
         expect(current_path).to eq(edit_widget_path(121))
 
-        # fill_in :user_widgets_name, with: 'Totally new widget'
-        # fill_in :user_widgets_description, with: 'Super rad new widget'
+        fill_in :user_widgets_description, with: "I'm hiding"
         choose('Hidden')
 
         click_on 'Edit Widget'
@@ -130,8 +129,8 @@ context 'Signed in user can' do
         end
 
         within('.my-hidden-widgets') do
-          expect(page).to_not have_content('Super Sweet Widget')
-          expect(page).to_not have_content('So so sweet')
+          expect(page).to have_content('Super Sweet Widget')
+          expect(page).to have_content("I'm hiding")
         end
       end
     end
