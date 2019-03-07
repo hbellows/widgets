@@ -16,9 +16,9 @@
 * [Known Issues](#known-issues)
 * [Dependencies](#dependencies)
 * [Screenshots](#screenshots)
-    * [Widgets](#widgets)
-    * [User Widgets](#user-widgets)
-    * [Widget Search](#widget-search)
+    * [Home](#home)
+    * [Widget by User](#widget-by-user)
+    * [User Dashboard](#user-dashboard)
 * [How To Contribute](#how-to-contribute)
 * [Contributors/Developers](#contributorsdevelopers)
 
@@ -51,23 +51,22 @@ Track the progress of this application [here](https://github.com/hbellows/widget
 Run `rspec` to run the full test suite, or `rails s` to load up the application locally.
 
 ## Known Issues
-Flash alerts and notices are static.  The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+ - Flash alerts and notices are static. The should probably actually flash! And, ideally, be red or green according to the success or failure of the action.
+ - Oauth has not yet been implemented.
+ - New Widget link should appear on main nav bar, and when a unregistered/unlogged in user clicks the link, a modal should appear with sign up/sign in forms
 
 ## Dependencies
  ### All Environments
  - [Rails](https://guides.rubyonrails.org/)
  - [Postgresql](https://www.postgresql.org/)
- - [Puma](https://github.com/puma/puma)
- - [Bootsnap](https://github.com/Shopify/bootsnap)
  - [Faraday](https://github.com/lostisland/faraday)
  - [Figaro](https://github.com/laserlemon/figaro)
- - [Fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+ - [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+ - [Bcrypt](https://github.com/codahale/bcrypt-ruby)
 
  ### Development
  - [Rspec for Rails](https://github.com/rspec/rspec-rails)
- - [Factory Bot for Rails](https://github.com/thoughtbot/factory_bot_rails)
  - [Pry for Rails](https://github.com/rweng/pry-rails)
- - [Awesome Print](https://github.com/awesome-print/awesome_print)
  - [Fuubar](https://github.com/thekompanee/fuubar)
  
  ### Test
@@ -79,16 +78,16 @@ Flash alerts and notices are static.  The should probably actually flash! And, i
  - [Simplecov](https://github.com/colszowka/simplecov)
 
 ## Screenshots
-### Widgets
+### Home
 
 <img src="./screenshots/home_view.png">
 
 
-### User Widgets
+### Widget by User
 
 <img src="./screenshots/widget_by_user_view.png">
 
-### Widget Search
+### User Dashboard
 
 <img src="./screenshots/dashboard_view.png">
 
